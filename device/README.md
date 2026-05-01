@@ -89,7 +89,9 @@ Once the application is running, you can access it at:
 
 The application provides a simple web interface where you can:
 
-1. **Initiate Device Flow**: Click the button to start the device authorization flow
+1. **Initiate Device Flow**: Click the button to start the device authorization flow:
+   - The application sends a request to the Keycloak server's device authorization endpoint requesting a device code and user code
+   - The server responds with the codes needed for the authorization process
 2. **View Device Code**: The application will display:
    - A user code that needs to be entered on the verification page
    - A verification URI where the user should navigate
@@ -98,7 +100,7 @@ The application provides a simple web interface where you can:
    - Open the verification URI in a browser (can be on a different device)
    - Log in with username `alice` and password `password`
    - Enter the user code when prompted (or use the complete verification URI)
-   - Approve the authorization request
+   - Give consent and approve the authorization request
 4. **Automatic Token Retrieval**: The application automatically polls Keycloak every 5 seconds and will display the access token once authorization is granted
 
 Understanding the Device Flow
